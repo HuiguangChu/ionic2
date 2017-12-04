@@ -1,23 +1,34 @@
 import {Component} from '@angular/core';
-import {Platform} from 'ionic-angular';
+import {OrdersService} from "../../services/orders";
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/fromPromise';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [OrdersService]
 })
 export class HomePage {
   pet: string = "puppies";
-  isAndroid: boolean = false;
+  ordersService: OrdersService;
 
-  constructor(platform: Platform) {
-    this.isAndroid = platform.is('android');
+  constructor(orderService: OrdersService) {
+    this.ordersService = orderService;
   }
 
-  ionViewDidLoad() {
-    //call the service to load the data
+  ngOnInit() {
+    this.subscribeData();
   }
 
   changeSegment() {
-    console.log(this.pet);
+    this.subscribeData();
+  }
+
+  subscribeData() {
+    const subscription = Observable.fromPromise(this.ordersService.loadOrders(this.pet));
+
+    subscription.subscribe(data => {
+      console.log(data);
+    })
   }
 }
