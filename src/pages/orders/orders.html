@@ -1,0 +1,37 @@
+<ion-header text-center no-border>
+  <ion-toolbar no-padding>
+    <ion-segment [(ngModel)]="orderType" (ionChange)="changeSegment()">
+      <ion-segment-button value="all">
+        所有
+      </ion-segment-button>
+      <ion-segment-button value="new">
+        新订单
+      </ion-segment-button>
+      <ion-segment-button value="old">
+        已完成
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]='orderType'>
+    <ion-list *ngSwitchCase="'all'">
+        <ion-item *ngFor="let order of orders">
+          {{order.categoryName}}
+        </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'new'">
+      <ion-item *ngFor="let order of orders">
+        {{order.categoryName}}
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'old'">
+      <ion-item *ngFor="let order of orders">
+        {{order.categoryName}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

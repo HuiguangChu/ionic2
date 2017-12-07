@@ -4,9 +4,8 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {MyApp} from './app.component';
 import {AboutPage} from '../pages/about/about';
 import {ContactPage} from '../pages/contact/contact';
-import {HomePage} from '../pages/home/home';
+import {OrdersPage} from '../pages/orders/orders';
 import {TabsPage} from '../pages/tabs/tabs';
-import * as wilddog from 'wilddog';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -16,7 +15,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    OrdersPage,
     TabsPage
   ],
   imports: [
@@ -28,7 +27,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     MyApp,
     AboutPage,
     ContactPage,
-    HomePage,
+    OrdersPage,
     TabsPage
   ],
   providers: [

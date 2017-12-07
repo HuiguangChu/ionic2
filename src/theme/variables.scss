@@ -5,15 +5,12 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
-
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
-
 @import "ionic.globals";
-
 
 // Shared Variables
 // --------------------------------------------------
@@ -21,9 +18,6 @@ $app-direction: ltr;
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
-
 
 // Named Color Variables
 // --------------------------------------------------
@@ -34,34 +28,47 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: #488aff,
+  secondary: #32db64,
+  danger: #f53d3d,
+  light: #ffffff,
+  dark: #222
 );
 
-
+$tabs-background: #ffffff;
+$font-size-base: 1rem !default; // 1.4rem == 14px
+$toolbar-background: #ffffff;
+$toolbar-ios-height: 40px;
+$toolbar-md-height: 40px;
+$toolbar-wp-height: 40px;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
-
-
+$toolbar-ios-title-font-size: 1.5rem;
+$toolbar-ios-title-text-align: center;
+$control-header-height: 40px;
+$tabs-ios-tab-min-height: 40px;
+$tabs-ios-tab-icon-size: 2.5rem;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$toolbar-md-title-font-size: 1.5rem;
 
-
-
-
+$tabs-md-tab-font-size: 1rem;
+$tabs-md-tab-font-size-active: 1rem;
+$tabs-md-tab-icon-size: 2.3rem;
+$tabs-md-tab-min-height: 4rem;
+$tabs-md-tab-font-weight: 500;
+$tabs-md-tab-icon-bottom-transform-active: none;
+$tabs-md-tab-icon-transform-active: none;
+$tabs-md-tab-text-transition: none;
+$tabs-md-tab-text-transform-active: none;
+$toolbar-md-title-text-align: center;
+$tabs-md-tab-padding: 2px 0;
+$item-md-divider-border-bottom:1rem;
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -72,14 +79,12 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
-
 
 // Fonts
 // --------------------------------------------------

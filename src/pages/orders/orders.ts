@@ -5,12 +5,13 @@ import 'rxjs/add/observable/fromPromise';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: 'orders.html',
   providers: [OrdersService]
 })
-export class HomePage {
-  pet: string = "puppies";
+export class OrdersPage {
+  orderType: string = "new";
   ordersService: OrdersService;
+  orders: object;
 
   constructor(orderService: OrdersService) {
     this.ordersService = orderService;
@@ -25,10 +26,10 @@ export class HomePage {
   }
 
   subscribeData() {
-    const subscription = Observable.fromPromise(this.ordersService.loadOrders(this.pet));
+    const subscription = Observable.fromPromise(this.ordersService.loadOrders(this.orderType));
 
     subscription.subscribe(data => {
-      console.log(data);
+      this.orders = data;
     })
   }
 }
